@@ -28,16 +28,26 @@ const Home = () => {
 
     fetchData(); // Call the async function
   }, []);
-
+  // console.log(matchSchedule[0].scheduleAdWrapper?.matchScheduleList[0].matchInfo[0].seriesId)
+  const handleView = (id) => {
+    console.log(id);
+  };
   return (
     <div>
       {/* <AuthNavbar /> */}
       Home
       {matchSchedule.map((item, index) => (
-        <table key={index}>
+        <table
+          key={
+            item.scheduleAdWrapper?.matchScheduleList[0].matchInfo[0].seriesId
+          }
+        >
           <tbody>
             <tr>
               <td>{item.scheduleAdWrapper?.date}</td>
+              <td>{item.scheduleAdWrapper?.matchScheduleList[0].seriesName}</td>
+
+              <td onClick={handleView(key)}>View</td>
             </tr>
           </tbody>
         </table>
