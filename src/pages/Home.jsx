@@ -13,30 +13,30 @@ const Home = () => {
       "x-rapidapi-host": "cricbuzz-cricket.p.rapidapi.com",
     },
   };
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.request(options);
-        const filteredData = response.data.matchScheduleMap.filter(
-          (item) => item.scheduleAdWrapper
-        );
-        setMatchSchedule(filteredData);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.request(options);
+  //       const filteredData = response.data.matchScheduleMap.filter(
+  //         (item) => item.scheduleAdWrapper
+  //       );
+  //       setMatchSchedule(filteredData);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    fetchData(); // Call the async function
-  }, []);
+  //   fetchData(); // Call the async function
+  // }, []);
   // console.log(matchSchedule[0].scheduleAdWrapper?.matchScheduleList[0].matchInfo[0].seriesId)
   const handleView = (id) => {
     console.log(id);
   };
   return (
     <div>
-      {/* <AuthNavbar /> */}
+      <AuthNavbar />
       Home
-      {matchSchedule.map((item, index) => (
+      {/* {matchSchedule.map((item, index) => (
         <table
           key={
             item.scheduleAdWrapper?.matchScheduleList[0].matchInfo[0].seriesId
@@ -51,7 +51,7 @@ const Home = () => {
             </tr>
           </tbody>
         </table>
-      ))}
+      ))} */}
     </div>
   );
 };
