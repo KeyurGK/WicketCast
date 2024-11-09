@@ -22,6 +22,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        console.log(rapidApiKey)
         const response = await axios.request(options);
         const filteredData = response.data.matchScheduleMap.filter(
           (item) => item.scheduleAdWrapper
