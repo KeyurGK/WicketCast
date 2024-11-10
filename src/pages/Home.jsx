@@ -85,7 +85,7 @@ const Home = () => {
                       className="p-3 border border-gray-300 text-blue-500 cursor-pointer hover:underline"
                       onClick={() => handleView(Id)}
                     >
-                      View
+                      View Schedule
                     </td>
                   </tr>
                 );
