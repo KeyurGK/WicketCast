@@ -12,7 +12,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = useGoogleLogin({
         onSuccess: (response) => {
-            console.log("Google response:", response);
+            // console.log("Google response:", response);
             setLocalStorage("access_token", response.access_token); // Store token
             setIsAuthenticated(true); // Update auth status
             navigate("/home"); // Navigate after successful login
